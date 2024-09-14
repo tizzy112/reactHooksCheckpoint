@@ -1,14 +1,18 @@
 import React from "react";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
 import MovieList from "./MovieList";
+import MovieDetails from "./MovieDetails";
 import Filter from "./Fliter";
+import { initialMovies } from "./MovieData";
+import "./App.css";
 
 const App = () => {
-  const [movies, setMovies] = React.useState([]);
+  const [movies, setMovies] = React.useState(initialMovies);
   const [filter, setFilter] = React.useState({ title: "", rating: "" });
 
   const addMovie = (newMovie) => {
     setMovies([...movies, newMovie]);
+    localStorage.setItem("movies", JSON.stringify([...movies, newMovie])); // Save to localStorage
   };
 
   const handleFilter = (criteria) => {
@@ -29,7 +33,10 @@ const App = () => {
     <div className="app">
       <h1>Movie Database</h1>
       <Filter onFilter={handleFilter} />
-      <MovieList movies={filteredMovies} />
+      <Routes>
+        <Route path="/" element={<MovieList movies={filteredMovies} />} />
+        <Route path="/movie/:title" element={<MovieDetails />} />
+      </Routes>
       <button
         onClick={() =>
           addMovie({
@@ -37,6 +44,7 @@ const App = () => {
             description: "Description of the new movie.",
             posterURL: "https://via.placeholder.com/150",
             rating: 5,
+            trailer: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Example trailer link
           })
         }
       >

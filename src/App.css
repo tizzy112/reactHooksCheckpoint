@@ -1,47 +1,157 @@
-.movie-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px;
-  max-width: 200px;
-  text-align: center;
-}
-
-.movie-poster {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.movie-title {
-  font-size: 1.2em;
-  margin: 8px 0;
-}
-
-.movie-description {
-  font-size: 0.9em;
-  color: #555;
-}
-
-.movie-rating {
-  font-size: 1em;
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
+/* App Container */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Movie List */
 .movie-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
+/* Movie Card */
+.movie-card {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.movie-card h2 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.movie-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.movie-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.movie-card a:hover {
+  background-color: #0056b3;
+}
+
+/* Filter Styles */
 .filter {
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .filter input {
-  margin-right: 8px;
-  padding: 8px;
+  margin: 8px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 200px;
 }
 
 .filter button {
-  padding: 8px 16px;
+  margin: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter button:hover {
+  background-color: #218838;
+}
+
+.filter button:last-child {
+  background-color: #dc3545;
+}
+
+.filter button:last-child:hover {
+  background-color: #c82333;
+}
+
+/* Movie Details */
+.movie-details {
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.movie-details img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.movie-details h2 {
+  margin: 20px 0;
+  color: #333;
+}
+
+.movie-details p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.movie-details .trailer {
+  margin: 20px 0;
+}
+
+.movie-details a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.movie-details a:hover {
+  background-color: #0056b3;
 }
