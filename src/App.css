@@ -1,0 +1,47 @@
+.movie-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  max-width: 200px;
+  text-align: center;
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.movie-title {
+  font-size: 1.2em;
+  margin: 8px 0;
+}
+
+.movie-description {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.movie-rating {
+  font-size: 1em;
+  color: #333;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter {
+  margin-bottom: 16px;
+}
+
+.filter input {
+  margin-right: 8px;
+  padding: 8px;
+}
+
+.filter button {
+  padding: 8px 16px;
+}
